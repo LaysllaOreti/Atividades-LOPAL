@@ -1,11 +1,12 @@
-xml_str = """<?xml version="1.0" enconding="UTF-8"?>
-<config>
-    <versao>1.0</versao>
-</config>"""
+import csv
+import json
 
-with open("config.xml", "w", encoding="utf-8") as f:
-    f.write(xml_str)
+dados = []
 
-with open("config.xml", "r", encoding="utf-8") as f:
-    conteudo = f.read()
-    print(conteudo)
+with open("pedidosEcommerce.csv", encoding='utf-8') as csv_file:
+    leitor = csv.DictReader(csv_file)
+    for linha in leitor:
+        dados.append(linha)
+
+with open("pedidosEcommerce.json", "w", encoding='utf-8') as json_file:
+    json.dump(dados, json_file, indent=4)
