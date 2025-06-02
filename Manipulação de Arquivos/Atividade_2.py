@@ -1,9 +1,7 @@
-import json
+import pandas as pd
 
-with open("dados.json", "w") as f:
-    json.dump({"nome":"Layslla", "idade": 19}, f)
+df = pd.read_excel("pedidosEcommerce.xls")
 
-with open("dados.json", "r") as f:
-    data = json.load(f)
-    print(data)
+df.to_csv("pedidosEcommerce.csv", index=False)
 
+print("Arquivo convertido para .csv com sucesso total!")
