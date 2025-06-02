@@ -1,33 +1,14 @@
-with open("meu_arquivo.txt", "w") as arquivo:
-    arquivo.write("Ola mundo, eu sou Layslla Eduarda!\n")
-    arquivo.write("Estou aprendendo Python!\n")
+import pandas as pd
 
-#Abre o arquivo em modo de leitura, "r"
-arquivo = open("meu_arquivo.txt", "r")
+historico_pedidos = [
+    {'ID': 1, 'Nome': 'Layslla', 'Endereço': 'Rua Clovis, 100', 'Produto': 'Whey Protein', 'Quantidade': 1, 'Preço': 160, 'Data': '01/04/2025'},
+    {'ID': 2, 'Nome': 'Daniel', 'Endereço': 'Rua das Veredas, 450', 'Produto': 'Pre-Treino', 'Quantidade': 2, 'Preço': 120, 'Data': '04/04/2025'},
+    {'ID': 3, 'Nome': 'Pamella', 'Endereço': 'Rua Luciano da Silva, 185', 'Produto': 'Pasta de Amendoim', 'Quantidade': 1, 'Preço': 80, 'Data': '10/04/2025'},
+    {'ID': 4, 'Nome': 'Eduardo', 'Endereço': 'Rua Carlos Antonio, 280', 'Produto': 'Creatina', 'Quantidade': 1, 'Preço': 76, 'Data': '20/04/2025'}
+]
 
-#Lê o conteúdo do arquivo
-#reusltado = arquivo.readlines() - lê com tudo na linha
-resultado = arquivo.read()
-print(resultado)
+df = pd.DataFrame(historico_pedidos)
 
-#Colocar caminho se não estiver dentro da pasta
-with open("meu_arquivo.txt", "r") as arquivo:
-    arquivo = open("meu_arquivo.txt", "r")
-    conteudo = arquivo.read()
-    print(conteudo)
+df.to_excel("pedidosEcommerce.xls", index=False)
 
-import csv
-with open('meu_arquivoCsv.csv', 'w') as f:
-    writer = csv.writer(f)
-
-    # Escreve as linhas no arquivo
-    writer.writerow("Nome, Preco")  # Primeira linha (cabeçalho)
-    writer.writerow("Livro, 20")  # Segunda linha
-
-print("Arquivo CSV criado com sucesso!")
-
-
-with open('meu_arquivoCsv.csv', 'r') as arquivo_csv:
-    reader = csv.reader(arquivo_csv)
-    for row in reader:
-        print(row)
+print("Arquivo gerado com sucesso total!")
