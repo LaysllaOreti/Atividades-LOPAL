@@ -33,7 +33,5 @@ Este repositório reúne os conteúdos e exercícios realizados na disciplina de
 ├── Lista de Operadores Aritméticos                   
 ├── Lista Laço de Repetição                  
 ├── Lista Manipulação de Arquivos                 
-├── Projeto Integrador                                
-├── Manipulacao_Arquivos                          
-├── Operadores_Aritmeticos - 04_03_2025          
-└── Projeto Integrador LOPAL           
+├── Projeto Integrador                                                         
+└── Manipulacao_Arquivos      
